@@ -10,11 +10,11 @@ CREATE TABLE IF NOT EXISTS "users"
 (
     "id" SERIAL NOT NULL PRIMARY KEY , 
     "name" VARCHAR NOT NULL , 
-    "email" VARCHAR NOT NULL ,
-    "contactNo" VARCHAR(12) , 
-    "password" VARCHAR(20) NOT NULL , 
+    "email" VARCHAR NOT NULL UNIQUE,
+    "contactNo" VARCHAR(12) UNIQUE , 
+    "password" TEXT NOT NULL , 
     "industryType" industryType , 
-    "username" VARCHAR(10) NOT NULL , 
+    "username" VARCHAR(10) NOT NULL UNIQUE , 
     "profile" TEXT DEFAULT 'user.jpeg',
     "userType"  userType NOT NULL ,
     "createdAt" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
@@ -68,6 +68,6 @@ DROP TABLE IF EXISTS "users" ;
 
 DROP TYPE IF EXISTS industryType ;
 
-DROP TYPE IF EXISTS "userType";
+DROP TYPE IF EXISTS userType;
 
 DROP EXTENSION IF EXISTS "uuid" ;

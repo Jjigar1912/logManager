@@ -25,12 +25,20 @@ const checkPassword = (value, helper) => {
 };
 
 const signup = Joi.object({
-  username: Joi.string().custom(checkusername).trim().required(),
-  name: Joi.string().custom(checkname).trim().required(),
-  password: Joi.string().custom(checkPassword).trim().required(),
-  email: Joi.string().email().trim().required(),
+  username: Joi.string().custom(checkusername).trim(),
+  name: Joi.string().custom(checkname).trim(),
+  password: Joi.string().custom(checkPassword).trim(),
+  email: Joi.string().email().trim(),
+  userType : Joi.string().valid('NORMAL','GOOGLE','GITHUB')
 });
+
+
+const login = Joi.object({
+  username : Joi.string().trim().required() , 
+  password : Joi.string().trim().required()
+})
 
 export {
   signup,
+  login
 };

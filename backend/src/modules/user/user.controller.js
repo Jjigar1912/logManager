@@ -1,12 +1,36 @@
+import CustomError from "../../../helper/customError.js";
+import userService from "./user.service.js";
+
 class UserController {
-  async signup(req, res) {
+
+  async signup(req, res , next ) {
+
     try {
-      return res.status(200).json('Done');
+
+      const response = await userService.signup(req.body);
+      return res.status(response.status).json(response);
+
     } catch (error) {
-      console.log(error);
-      return res.status(500).json(error);
+
+      next(new CustomError(error.status,error.message,error.data));
+
     }
   }
+
+  async login(req,res,next){
+
+    try{
+
+      const response = await userService.login(req.body);
+      return res.status(response.status).json(response);
+
+    }catch(error){
+      console.log(error);
+      next(new CustomError(error.status,error.message,error.data));
+    
+    }
+  }
+
 }
 
 export default new UserController();

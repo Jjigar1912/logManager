@@ -1,0 +1,16 @@
+swagger: "2.0"
+info: 
+  title: Log Manager 
+  description: Log Manager APIS Developed by Jigar Khalas
+  contact: 
+    name: Jigar Khalas 
+    email: khalasjigar0861@gmail.com
+paths:
+  /user/login:
+    get:
+      summary: User Login API
+      tags: 
+        - User
+      responses: 
+        200: 
+          description: success

@@ -9,4 +9,6 @@ export default {
   DATABASE_HOST: process.env.DATABASE_HOST,
   DATABASE_USER: process.env.DATABASE_USER,
   DATABASE_PASSWORD: process.env.DATABASE_PASSWORD,
+  JWT_KEY : process.env.JWT_KEY ,
+  REFRESH_KEY : process.env.REFRESH_KEY 
 };
