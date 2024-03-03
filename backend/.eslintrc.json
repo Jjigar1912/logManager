@@ -9,6 +9,10 @@
         "sourceType": "module"
     },
     "rules": {
-        "import/extensions" : "off"
+        "import/extensions" : "off" , 
+        "no-console" : "off",
+        "class-methods-use-this" : "off", 
+        "new-cap" : "off" , 
+        "consistent-return" : "off"
     }
 }
