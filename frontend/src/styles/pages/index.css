@@ -1,0 +1,18 @@
+.header{
+    max-width: 1200px;
+    margin : auto ;
+}
+.main{
+    background : linear-gradient(-90deg,#004C99,#007FFF 120%);
+    width : 100% ; 
+    padding : 5px 2px ;
+}
+.header h1{
+    color : #FFFFFF;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+@media screen and (max-width : 1291px) {
+    .header{
+        padding : 0px 0px 0px 25px;
+    }
+}
